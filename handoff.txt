@@ -1,0 +1,132 @@
+IMAGE INSIGHT VQA - TEAM HANDOFF
+================================
+
+Current branch to use:
+main
+
+Recommended workflow for each member:
+1. Pull latest main before starting.
+2. Read this handoff file and the matching file in handoff/.
+3. Complete your assigned phase tasks.
+4. Run the listed checks.
+5. Update this file before passing to the next member.
+6. Commit and push to main.
+
+
+MEMBER 01 -> MEMBER 02
+======================
+
+Status:
+DONE
+
+Member 01 owner area:
+Dataset, question taxonomy, preprocessing, ground-truth quality, and dataset/report notes.
+
+Completed according to project plan:
+- [x] Selected official dataset source: VQA v2 validation + MS COCO 2014 validation images.
+- [x] Prepared official evaluation/demo subset for a pre-trained VQA model.
+- [x] Added 48 image-question-answer rows in data/vqa_test_set.csv.
+- [x] Added 34 selected COCO val2014 images in data/sample_images/.
+- [x] Balanced all 6 categories with 8 rows each:
+      counting, yes_no, color, object, action, spatial_scene.
+- [x] Added VQA v2 ground-truth answers.
+- [x] Added hard examples for failure analysis.
+- [x] Added image preprocessing in src/preprocessing.py.
+- [x] Added question type detection in src/question_types.py.
+- [x] Added dataset validation script: scripts/validate_dataset.py.
+- [x] Added dataset profiling script: scripts/profile_dataset.py.
+- [x] Added dataset profile outputs in results/ and report/.
+- [x] Documented image sources in data/IMAGE_SOURCES.md.
+- [x] Documented taxonomy rules in data/QUESTION_TAXONOMY.md.
+- [x] Wrote detailed Member 01 handoff in handoff/member01_to_member02.md.
+
+Validation evidence:
+Command:
+python scripts/validate_dataset.py
+
+Expected output:
+Rows: 48
+Unique images: 34
+Hard examples: 24
+counting: 8
+yes_no: 8
+color: 8
+object: 8
+action: 8
+spatial_scene: 8
+Dataset validation passed.
+
+Notes for Member 02:
+- The model should be pre-trained; do not train from scratch.
+- Recommended main model: Salesforce/blip-vqa-capfilt-large.
+- Fallback model: Salesforce/blip-vqa-base.
+- Start with src/model_loader.py and src/inference.py.
+- Use data/vqa_test_set.csv for testing predictions.
+
+
+MEMBER 02 -> MEMBER 03
+======================
+
+Status:
+TODO
+
+Member 02 owner area:
+Model loading, Hugging Face integration, inference pipeline, fallback model, answer normalization, and initial performance testing.
+
+Required tasks according to project plan:
+- [ ] Implement cached model loading in src/model_loader.py.
+- [ ] Use Salesforce/blip-vqa-capfilt-large as the main model.
+- [ ] Add Salesforce/blip-vqa-base fallback if GPU memory is weak.
+- [ ] Implement answer_question(image_path, question) in src/inference.py.
+- [ ] Return predicted answer and inference time.
+- [ ] Add/verify answer normalization with src/utils.py.
+- [ ] Run at least 10 mixed examples from data/vqa_test_set.csv.
+- [ ] Record known limitations and model behavior.
+- [ ] Update handoff/member02_to_member03.md before passing to Member 03.
+
+Checks Member 02 should run:
+python -m compileall src scripts
+python scripts/validate_dataset.py
+
+Optional model smoke test:
+Run answer_question() on at least one counting, yes_no, color, object, action, and spatial_scene row.
+
+
+MEMBER 03 -> TEAM
+=================
+
+Status:
+TODO
+
+Member 03 owner area:
+Gradio app, result logging, demo examples, screenshots, demo flow, and final presentation support.
+
+Required tasks according to project plan:
+- [ ] Build Gradio UI in app.py.
+- [ ] Connect image upload and question input.
+- [ ] Show answer, question type, and inference time.
+- [ ] Add predefined examples from data/vqa_test_set.csv.
+- [ ] Add invalid input messages.
+- [ ] Add result logging to data/predictions.csv.
+- [ ] Capture screenshots in report/screenshots/.
+- [ ] Update handoff/member03_to_team.md.
+- [ ] Prepare demo script and final demo backup.
+
+Checks Member 03 should run:
+python app.py
+python scripts/validate_dataset.py
+
+
+FINAL TEAM CHECKLIST
+====================
+
+- [ ] Every member has pulled latest main.
+- [ ] Every member has run the final app locally.
+- [ ] Every member has tested at least 5 image-question pairs.
+- [ ] Overall accuracy has been calculated.
+- [ ] Per-question-type accuracy has been calculated.
+- [ ] Average inference time has been calculated.
+- [ ] At least 5 failure cases have been explained.
+- [ ] Final report is complete.
+- [ ] Demo video or live demo flow is ready.
+- [ ] Backup screenshots are ready.

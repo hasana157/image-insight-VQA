@@ -30,6 +30,7 @@ image-insight-VQA/
 |-- requirements.txt
 |-- README.md
 |-- TASK_CHECKLIST.md
+|-- handoff.txt
 |-- .gitignore
 |
 |-- src/
@@ -87,6 +88,17 @@ python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
 ```
+
+## Team Handoff
+
+Use [handoff.txt](handoff.txt) as the main team handoff file. It shows:
+
+- what Member 01 completed
+- what Member 02 should do next
+- what Member 03 should do after model integration
+- final team checklist before submission
+
+Detailed phase handoffs are also stored in `handoff/`.
 
 ## Member 01 Focus
 

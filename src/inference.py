@@ -7,7 +7,7 @@ Handles answer normalization, timing, and error cases.
 
 import time
 import torch
-from src.config import DEVICE, MAX_ANSWER_LENGTH
+from src.config import MAX_ANSWER_LENGTH, get_device
 from src.model_loader import load_model
 from src.preprocessing import preprocess_image
 from src.question_types import classify_question_type
@@ -62,7 +62,7 @@ def answer_question(image_path: str, question: str) -> tuple[str, float]:
 
 def _run_blip_inference(processor, model, image, question: str) -> str:
     """Run inference using BLIP-VQA model."""
-    inputs = processor(image, question, return_tensors="pt").to(DEVICE)
+    inputs = processor(image, question, return_tensors="pt").to(get_device())
     with torch.no_grad():
         output = model.generate(**inputs, max_new_tokens=MAX_ANSWER_LENGTH)
     answer = processor.decode(output[0], skip_special_tokens=True)
@@ -71,7 +71,7 @@ def _run_blip_inference(processor, model, image, question: str) -> str:
 
 def _run_vilt_inference(processor, model, image, question: str) -> str:
     """Run inference using ViLT model."""
-    inputs = processor(image, question, return_tensors="pt").to(DEVICE)
+    inputs = processor(image, question, return_tensors="pt").to(get_device())
     with torch.no_grad():
         outputs = model(**inputs)
     logits = outputs.logits

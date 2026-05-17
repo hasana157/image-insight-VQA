@@ -7,7 +7,7 @@ Supports BLIP-VQA (primary) and ViLT (fallback).
 
 import time
 import torch
-from src.config import PRIMARY_MODEL, FALLBACK_MODEL, DEVICE
+from src.config import PRIMARY_MODEL, FALLBACK_MODEL, get_device
 
 # --- Module-level cache so model loads only once ---
 _cache = {
@@ -37,7 +37,8 @@ def load_model(model_name: str = None):
         print(f"[model_loader] Using cached model: {model_name}")
         return _cache["processor"], _cache["model"]
 
-    print(f"[model_loader] Loading model: {model_name} on {DEVICE} ...")
+    device = get_device()
+    print(f"[model_loader] Loading model: {model_name} on {device} ...")
     start = time.time()
 
     try:
@@ -81,7 +82,7 @@ def _load_single_model(model_name: str):
     else:
         raise ValueError(f"Unsupported model: {model_name}. Add its loader class here.")
 
-    model.to(DEVICE)
+    model.to(get_device())
     model.eval()
     return processor, model
 

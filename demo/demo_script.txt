@@ -1,5 +1,81 @@
-0:00-0:15 Introduce project: image + question -> answer.
-0:15-0:35 Explain pipeline: Gradio -> preprocessing -> BLIP/VQA model -> output.
-0:35-1:25 Show 4 live examples: counting, color, yes/no, action/scene.
-1:25-1:45 Show evaluation results: accuracy, question-type accuracy, inference time.
-1:45-2:00 Explain limitations and future improvements.
+IMAGE INSIGHT: VQA — Demo Script
+===================================
+Total Time: 2–3 minutes
+
+---
+
+OPENING (30 seconds)
+--------------------
+"This is IMAGE INSIGHT, a Visual Question Answering system.
+It takes an image and a natural language question, and predicts
+the answer using AI — specifically, Salesforce's BLIP model
+fine-tuned for VQA. Let me walk you through a quick demo."
+
+
+DEMO FLOW (2 minutes)
+---------------------
+
+1. SHOW THE INTERFACE (15 seconds)
+   "The interface is designed to be intuitive and professional.
+   At the top you see summary statistics — our model achieves
+   93.8% accuracy across 48 test cases with an average inference
+   time of just 0.12 seconds."
+
+2. UPLOAD AN IMAGE — Counting Example (20 seconds)
+   Image: data/sample_images/COCO_val2014_000000131115.jpg
+   Question: "How many people are on the field?"
+   "I'll upload a sports image and ask a counting question.
+   Notice the result card — it shows the answer '3', the question
+   type is automatically detected as COUNTING (purple badge), and
+   inference took about 0.1 seconds."
+
+3. TRY A COLOR QUESTION (20 seconds)
+   Image: data/sample_images/COCO_val2014_000000393277.jpg
+   Question: "What color is the sky?"
+   "Now a color question. The model correctly identifies 'blue'.
+   See how the badge changes to COLOR in red."
+
+4. TRY A YES/NO QUESTION (15 seconds)
+   Image: data/sample_images/COCO_val2014_000000131089.jpg
+   Question: "Is the boy playing baseball?"
+   "For yes/no questions, the model gives a clear binary answer —
+   'yes' in this case. Badge shows YES/NO in blue."
+
+5. TRY A SPATIAL QUESTION (15 seconds)
+   Image: data/sample_images/COCO_val2014_000000262284.jpg
+   Question: "What room is this?"
+   "The model can reason about spatial context too — it identifies
+   this as a bathroom. The SPATIAL badge appears in teal."
+
+6. SHOW THE EXAMPLES TAB (10 seconds)
+   "In the Dataset tab, you can see all 48 test examples, covering
+   6 question types. Each was carefully curated from VQA v2."
+
+7. SHOW THE PREDICTIONS LOG (10 seconds)
+   "Every prediction is logged automatically. The Predictions Log
+   tab shows all submissions with their question types and times."
+
+8. SHOW PERFORMANCE CHARTS (10 seconds)
+   "The Performance tab shows evaluation results — per-question-type
+   accuracy and inference time distribution."
+
+
+CLOSING (30 seconds)
+--------------------
+"To summarize: our system achieves 93.8% overall accuracy.
+It excels at object recognition, yes/no, and spatial reasoning —
+all at 100%. Our main challenge is counting, where accuracy drops
+to 75% with clustered objects. This is typical for current VQA
+models and represents an area for future improvement.
+
+The entire pipeline — from dataset curation to model inference to
+this interface — was built collaboratively by our team of three.
+Thank you!"
+
+
+BACKUP PLAN
+-----------
+If the model fails to load or internet is unavailable:
+- Use pre-captured screenshots from report/screenshots/
+- Show the results charts from results/
+- Reference the metrics in results/metrics_summary.csv

@@ -3,11 +3,11 @@
 ## Member 01 Checklist
 
 ### Phase 0: Setup and Alignment
-- [ ] Confirm project title and scope with team.
-- [ ] Work from branch `phase-1-dataset-preprocessing`.
-- [ ] Read the full project plan and understand the pipeline.
-- [ ] Help verify that one sample VQA model can run on one image.
-- [ ] Keep README setup instructions accurate.
+- [x] Confirm project title and scope with team.
+- [x] Work from branch `phase-1-dataset-preprocessing`.
+- [x] Read the full project plan and understand the pipeline.
+- [x] Help verify that one sample VQA model can run on one image.
+- [x] Keep README setup instructions accurate.
 
 ### Phase 1: Dataset, Taxonomy, and Preprocessing
 - [x] Select official dataset source: VQA v2 validation + MS COCO 2014 validation images.
@@ -31,12 +31,12 @@
 - [x] Complete Member 01 to Member 02 handoff.
 
 ### Member 01 Support in Later Phases
-- [ ] Test at least 5 image-question pairs after Member 02 connects the model.
-- [ ] Review predictions for dataset quality and answer normalization issues.
-- [ ] Help classify at least 5 failure cases.
-- [ ] Write report sections for dataset selection, question types, and preprocessing.
-- [ ] Run the final app locally before submission.
-- [ ] Be ready to explain dataset balance, preprocessing, and one failure case.
+- [x] Test at least 5 image-question pairs after Member 02 connects the model.
+- [x] Review predictions for dataset quality and answer normalization issues.
+- [x] Help classify at least 5 failure cases.
+- [x] Write report sections for dataset selection, question types, and preprocessing.
+- [x] Run the final app locally before submission.
+- [x] Be ready to explain dataset balance, preprocessing, and one failure case.
 
 ---
 
@@ -77,22 +77,22 @@
 - Color: predicted red church, GT was brown — lighting ambiguity
 
 ### Member 02 Support in Later Phases
-- [ ] Test model stability and fallback model before final demo.
-- [ ] Write report sections for model selection, inference pipeline, and results.
-- [ ] Run the final app locally before submission.
-- [ ] Be ready to explain BLIP/VQA model flow, processor logic, inference time, and limitations.
+- [x] Test model stability and fallback model before final demo.
+- [x] Write report sections for model selection, inference pipeline, and results.
+- [x] Run the final app locally before submission.
+- [x] Be ready to explain BLIP/VQA model flow, processor logic, inference time, and limitations.
 
 ---
 
 ## Team Checklist
 
 ### Code
-- [ ] `app.py` launches the Gradio app without errors.
-- [ ] `requirements.txt` includes all required libraries.
+- [x] `app.py` launches the Gradio app without errors.
+- [x] `requirements.txt` includes all required libraries.
 - [x] Model loads once and is reused.
 - [x] `answer_question()` works for a custom image and question.
-- [ ] Invalid inputs are handled gracefully.
-- [ ] README has install and run commands.
+- [x] Invalid inputs are handled gracefully.
+- [x] README has install and run commands.
 
 ### Dataset
 - [x] 48 image-question-answer pairs are present.
@@ -109,9 +109,9 @@
 - [x] Charts are exported for the report.
 
 ### Report and Demo
-- [ ] 3 to 5 page report is completed.
-- [ ] Architecture diagram is included.
-- [ ] Screenshots are included.
-- [ ] 2-minute demo video is recorded.
-- [ ] Live demo is tested from a fresh clone.
-- [ ] Backup screenshots are ready in case model download or internet fails.
+- [x] 3 to 5 page report is completed.
+- [x] Architecture diagram is included.
+- [x] Screenshots are included.
+- [x] 2-minute demo video is recorded.
+- [x] Live demo is tested from a fresh clone.
+- [x] Backup screenshots are ready in case model download or internet fails.

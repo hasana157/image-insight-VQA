@@ -1,0 +1,5 @@
+0:00-0:15 Introduce project: image + question -> answer.
+0:15-0:35 Explain pipeline: Gradio -> preprocessing -> BLIP/VQA model -> output.
+0:35-1:25 Show 4 live examples: counting, color, yes/no, action/scene.
+1:25-1:45 Show evaluation results: accuracy, question-type accuracy, inference time.
+1:45-2:00 Explain limitations and future improvements.

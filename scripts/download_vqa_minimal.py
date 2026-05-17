@@ -1,6 +1,6 @@
 """Download only the VQA v2 subset needed for this project.
 
-This avoids the huge COCO 2014 train/val ZIP files. It downloads the VQA v2
+This avoids the huge COCO 2014 image ZIP files. It downloads the VQA v2
 validation question/annotation ZIPs, selects a balanced project subset, then
 downloads only the selected COCO val2014 image files.
 """
@@ -88,11 +88,12 @@ QUESTION_EXCLUSION_TERMS = {
     "number on",
     "read",
     "sentence",
+    "sign",
     "slogan",
-    "sign say",
-    "sign says",
     "text",
     "website",
+    "who ",
+    "will ",
     "word",
     "written",
 }
@@ -262,7 +263,7 @@ def write_csv(rows: list[dict[str, str]], output_csv: Path) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Download a minimal official VQA v2 subset.")
-    parser.add_argument("--rows-per-type", type=int, default=5)
+    parser.add_argument("--rows-per-type", type=int, default=8)
     parser.add_argument("--min-consensus", type=int, default=7)
     parser.add_argument("--max-rows-per-image", type=int, default=3)
     parser.add_argument("--output-csv", type=Path, default=TEST_SET_CSV)

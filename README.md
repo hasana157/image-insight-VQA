@@ -52,16 +52,21 @@ image-insight-VQA/
 |
 |-- scripts/
 |   |-- download_vqa_minimal.py
+|   |-- profile_dataset.py
 |   |-- validate_dataset.py
 |
 |-- results/
 |   |-- metrics_summary.csv
+|   |-- dataset_profile.csv
+|   |-- dataset_question_type_distribution.png
+|   |-- dataset_answer_type_distribution.png
 |
 |-- notebooks/
 |   |-- exploration_and_model_testing.ipynb
 |
 |-- report/
 |   |-- final_report_outline.md
+|   |-- dataset_profile.md
 |   |-- member01_dataset_preprocessing.md
 |   |-- screenshots/
 |
@@ -90,8 +95,8 @@ Member 01 owns the dataset, question taxonomy, image preprocessing, ground-truth
 For this project, we use a pre-trained VQA model. Member 01 does not train the model. Member 01 prepares the official evaluation/demo subset that Member 02 will run through the pre-trained model.
 
 1. Download the minimal official VQA v2 validation metadata and selected COCO val2014 images.
-2. Build `data/vqa_test_set.csv` with 30 image-question-answer rows.
-3. Keep at least 5 examples for each question type.
+2. Build `data/vqa_test_set.csv` with 48 image-question-answer rows.
+3. Keep 8 examples for each question type.
 4. Use `src/preprocessing.py` to validate image paths and image formats.
 5. Use `src/question_types.py` to keep question categories consistent.
 6. Update `handoff/member01_to_member02.md` before passing work to Member 02.
@@ -103,8 +108,9 @@ Raw dataset files are ignored by Git under `data/raw/`.
 Recommended minimal download:
 
 ```bash
-python scripts/download_vqa_minimal.py --rows-per-type 5 --min-consensus 7 --max-rows-per-image 3 --clean-unused-images
+python scripts/download_vqa_minimal.py --rows-per-type 8 --min-consensus 7 --max-rows-per-image 3 --clean-unused-images
 python scripts/validate_dataset.py
+python scripts/profile_dataset.py --charts
 ```
 
 This downloads only:

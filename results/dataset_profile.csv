@@ -1,0 +1,12 @@
+metric,value,notes
+total_rows,48,VQA image-question-answer pairs
+unique_images,34,Selected COCO val2014 images
+hard_examples,24,Rows marked for reasoning/failure analysis
+question_types,6,Balanced taxonomy categories
+min_rows_per_type,8,Smallest category count
+max_rows_per_image,3,Limits image repetition
+duplicate_image_question_pairs,0,Should be 0
+missing_images,0,Should be 0
+unique_answers,35,Answer vocabulary size
+avg_consensus,9.00/10,VQA annotator agreement
+image_storage_mb,5.24,Committed selected images only

@@ -17,8 +17,9 @@
 
 ```bash
 python -m compileall src
-python scripts/download_vqa_minimal.py --rows-per-type 5 --min-consensus 7 --max-rows-per-image 3 --clean-unused-images
+python scripts/download_vqa_minimal.py --rows-per-type 8 --min-consensus 7 --max-rows-per-image 3 --clean-unused-images
 python scripts/validate_dataset.py
+python scripts/profile_dataset.py --charts
 ```
 
 ## Changed Files
@@ -27,17 +28,22 @@ python scripts/validate_dataset.py
 - `data/vqa_test_set.csv`: ground-truth VQA v2 examples.
 - `data/IMAGE_SOURCES.md`: image source list.
 - `data/QUESTION_TAXONOMY.md`: question-type definitions and labeling rules.
+- `results/dataset_profile.csv`: machine-readable data profile.
+- `results/dataset_question_type_distribution.png`: balance chart.
+- `results/dataset_answer_type_distribution.png`: VQA answer-type chart.
+- `report/dataset_profile.md`: report-ready dataset profile.
 - `report/member01_dataset_preprocessing.md`: report-ready dataset/preprocessing notes.
 - `src/preprocessing.py`: image validation and RGB conversion.
 - `src/question_types.py`: rule-based question taxonomy.
 - `scripts/download_vqa_minimal.py`: recommended minimal official subset downloader.
+- `scripts/profile_dataset.py`: dataset profile and chart generator.
 - `scripts/validate_dataset.py`: dataset quality checker.
 
 ## Known Issues
 
 - Raw VQA metadata files are ignored under `data/raw/`.
 - The project uses a pre-trained VQA model, so no model training dataset is required.
-- The committed evaluation subset is intentionally small and balanced for fast demo/evaluation.
+- The committed evaluation subset is 48 rows, balanced at 8 rows per question type.
 - Some hard examples may produce weak model answers by design and should be used for failure analysis.
 
 ## Next Member Instructions
@@ -49,4 +55,4 @@ python scripts/validate_dataset.py
 
 ## Evidence
 
-- `python scripts/validate_dataset.py` should report 30 rows and at least 5 rows for every question type.
+- `python scripts/validate_dataset.py` should report 48 rows, 34 unique images, and 8 rows for every question type.

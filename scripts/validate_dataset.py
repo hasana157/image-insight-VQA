@@ -12,8 +12,8 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
+from src.config import SAMPLE_IMAGES_DIR
 from src.preprocessing import preprocess_image
-from src.config import PROJECT_ROOT, SAMPLE_IMAGES_DIR
 from src.question_types import QUESTION_TYPES, classify_question_type
 
 REQUIRED_COLUMNS = (
@@ -138,8 +138,8 @@ def print_summary(rows: list[dict[str, str]]) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Validate the VQA test set CSV and image files.")
     parser.add_argument("--csv", default="data/vqa_test_set.csv", help="Path to the VQA test CSV.")
-    parser.add_argument("--min-rows", type=int, default=30, help="Minimum required dataset rows.")
-    parser.add_argument("--min-per-type", type=int, default=5, help="Minimum rows required per question type.")
+    parser.add_argument("--min-rows", type=int, default=48, help="Minimum required dataset rows.")
+    parser.add_argument("--min-per-type", type=int, default=8, help="Minimum rows required per question type.")
     args = parser.parse_args()
 
     csv_path = PROJECT_ROOT / args.csv

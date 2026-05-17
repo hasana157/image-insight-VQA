@@ -1,1 +1,7 @@
-metric,value,notes
+question_type,total,correct,accuracy,overall_accuracy,avg_inference_time_sec,failure_rate
+action,8,8,1.0,0.9375,0.1225,0.0625
+color,8,7,0.875,0.9375,0.1225,0.0625
+counting,8,6,0.75,0.9375,0.1225,0.0625
+object,8,8,1.0,0.9375,0.1225,0.0625
+spatial_scene,8,8,1.0,0.9375,0.1225,0.0625
+yes_no,8,8,1.0,0.9375,0.1225,0.0625

@@ -1,0 +1,4 @@
+id,image_path,question,question_type,ground_truth_answer,predicted_answer,inference_time_sec,failure_category
+12,data/sample_images/COCO_val2014_000000262162.jpg,How many pictures are there?,counting,7,8,0.1368,counting_error
+30,data/sample_images/COCO_val2014_000000393282.jpg,How many giraffes are there?,counting,2,3,0.0927,counting_error
+35,data/sample_images/COCO_val2014_000000393288.jpg,What color is the church?,color,brown,red,0.1081,color_confusion

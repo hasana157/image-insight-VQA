@@ -92,44 +92,22 @@ def _get_model_type() -> str:
 
 
 def normalize_answer(answer: str, question: str = "") -> str:
-    """
-    Clean and normalize the raw model output.
-    - Lowercase
-    - Strip whitespace and punctuation
-    - Standardize yes/no responses
-    - Handle empty output
-
-    Args:
-        answer:   Raw answer string from model.
-        question: Original question (used for yes/no context).
-
-    Returns:
-        Cleaned answer string.
-    """
+    from src.config import ANSWER_SYNONYMS
     if not answer:
         return "unknown"
-
-    answer = answer.strip().lower()
-
-    # Remove trailing punctuation
-    answer = answer.rstrip(".,!?;:")
-
-    # Standardize yes/no
+    answer = answer.strip().lower().rstrip(".,!?;:")
     yes_variants = {"yes", "yeah", "yep", "yup", "correct", "true", "right"}
     no_variants  = {"no", "nope", "nah", "false", "wrong", "not"}
-
     if answer in yes_variants:
         return "yes"
     if answer in no_variants:
         return "no"
-
-    # Remove articles for cleaner comparison (optional, helps accuracy scoring)
-    # e.g. "a dog" -> "dog", "the car" -> "car"
     for article in ("a ", "an ", "the "):
         if answer.startswith(article):
             answer = answer[len(article):]
             break
-
+    # Apply synonym normalization
+    answer = ANSWER_SYNONYMS.get(answer, answer)
     return answer
 
 

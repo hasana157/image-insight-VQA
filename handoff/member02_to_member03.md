@@ -45,17 +45,17 @@ summary = evaluate_predictions("data/predictions.csv")
   EVALUATION SUMMARY
 ==================================================
   Total rows:          48
-  Overall accuracy:    XX.X%
-  Failure rate:        XX.X%
-  Avg inference time:  X.XXXs
+  Overall accuracy:    93.8%
+  Failure rate:        6.2%
+  Avg inference time:  0.1225s
 
   Per-type accuracy:
-    counting         X/8  (XX.X%)
-    yes_no           X/8  (XX.X%)
-    color            X/8  (XX.X%)
-    object           X/8  (XX.X%)
-    action           X/8  (XX.X%)
-    spatial_scene    X/8  (XX.X%)
+  action           8/8  (100.0%)
+  color            7/8  (87.5%)
+  counting         6/8  (75.0%)
+  object           8/8  (100.0%)
+  spatial_scene    8/8  (100.0%)
+  yes_no           8/8  (100.0%)
 ==================================================
 ```
 
@@ -98,11 +98,14 @@ question_type = classify_question_type(question)
 
 ## Known Issues / Limitations
 
-- BLIP-VQA performs weakest on **counting** questions with occluded or small objects.
-- **Spatial/scene** questions with ambiguous prepositions ("near" vs "on") often fail.
-- First inference call is slow (~3-8s) because the model warms up — use `load_model()` at startup to hide this from the user.
-- ViLT fallback is faster but less accurate — it classifies from a fixed label set, so open-ended answers may feel generic.
-- Some hard examples in the test set are designed to fail — use `results/failure_cases.csv` for honest failure analysis in the report.
+- Counting: predicted 3 giraffes, GT was 2 (partial occlusion)
+- Counting: predicted 8 pictures, GT was 7 (cluttered scene)  
+- Color: predicted red church, GT was brown (lighting ambiguity)
+- If imports fail after model reload, clear module cache first:
+```python
+  for mod in list(sys.modules.keys()):
+      if "src" in mod: del sys.modules[mod]
+```
 
 ## Next Member Instructions
 

@@ -5,6 +5,8 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 DATA_DIR = PROJECT_ROOT / "data"
+RAW_DATA_DIR = DATA_DIR / "raw"
+VQA_RAW_DIR = RAW_DATA_DIR / "vqa"
 SAMPLE_IMAGES_DIR = DATA_DIR / "sample_images"
 TEST_SET_CSV = DATA_DIR / "vqa_test_set.csv"
 PREDICTIONS_CSV = DATA_DIR / "predictions.csv"

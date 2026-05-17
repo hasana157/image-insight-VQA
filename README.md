@@ -47,6 +47,12 @@ image-insight-VQA/
 |   |-- sample_images/
 |   |-- vqa_test_set.csv
 |   |-- predictions.csv
+|   |-- IMAGE_SOURCES.md
+|   |-- QUESTION_TAXONOMY.md
+|
+|-- scripts/
+|   |-- download_vqa_minimal.py
+|   |-- validate_dataset.py
 |
 |-- results/
 |   |-- metrics_summary.csv
@@ -56,6 +62,7 @@ image-insight-VQA/
 |
 |-- report/
 |   |-- final_report_outline.md
+|   |-- member01_dataset_preprocessing.md
 |   |-- screenshots/
 |
 |-- demo/
@@ -78,11 +85,40 @@ pip install -r requirements.txt
 
 ## Member 01 Focus
 
-Member 01 owns the dataset, question taxonomy, image preprocessing, ground-truth quality, and the first handoff. Start with:
+Member 01 owns the dataset, question taxonomy, image preprocessing, ground-truth quality, and the first handoff.
 
-1. Add curated images to `data/sample_images/`.
-2. Fill `data/vqa_test_set.csv` with 30 to 50 image-question-answer rows.
+For this project, we use a pre-trained VQA model. Member 01 does not train the model. Member 01 prepares the official evaluation/demo subset that Member 02 will run through the pre-trained model.
+
+1. Download the minimal official VQA v2 validation metadata and selected COCO val2014 images.
+2. Build `data/vqa_test_set.csv` with 30 image-question-answer rows.
 3. Keep at least 5 examples for each question type.
 4. Use `src/preprocessing.py` to validate image paths and image formats.
 5. Use `src/question_types.py` to keep question categories consistent.
 6. Update `handoff/member01_to_member02.md` before passing work to Member 02.
+
+## Official Dataset Setup
+
+Raw dataset files are ignored by Git under `data/raw/`.
+
+Recommended minimal download:
+
+```bash
+python scripts/download_vqa_minimal.py --rows-per-type 5 --min-consensus 7 --max-rows-per-image 3 --clean-unused-images
+python scripts/validate_dataset.py
+```
+
+This downloads only:
+
+- VQA v2 validation questions ZIP
+- VQA v2 validation annotations ZIP
+- selected COCO val2014 image files used by `data/vqa_test_set.csv`
+
+## Dataset Validation
+
+Member 01 can check the dataset with:
+
+```bash
+python scripts/validate_dataset.py
+```
+
+The validator checks row count, image paths, question-type balance, ground-truth answers, sources, and hard-example notes.

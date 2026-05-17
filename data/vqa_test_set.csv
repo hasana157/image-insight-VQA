@@ -1,1 +1,31 @@
 id,image_path,question,question_type,ground_truth_answer,source,predicted_answer,is_correct,inference_time_sec,notes
+1,data/sample_images/COCO_val2014_000000262148.jpg,Where is he looking?,spatial_scene,down,VQA v2 val2014,,,,hard: reasoning-sensitive example; official VQA v2 val2014; answer_type=other; consensus=7/10
+2,data/sample_images/COCO_val2014_000000393225.jpg,Is this a creamy soup?,yes_no,no,VQA v2 val2014,,,,official VQA v2 val2014; answer_type=yes/no; consensus=10/10
+3,data/sample_images/COCO_val2014_000000393225.jpg,Is this rice noodle soup?,yes_no,yes,VQA v2 val2014,,,,official VQA v2 val2014; answer_type=yes/no; consensus=10/10
+4,data/sample_images/COCO_val2014_000000393225.jpg,What is to the right of the soup?,spatial_scene,chopsticks,VQA v2 val2014,,,,hard: reasoning-sensitive example; official VQA v2 val2014; answer_type=other; consensus=8/10
+5,data/sample_images/COCO_val2014_000000393226.jpg,What does the truck on the left sell?,spatial_scene,ice cream,VQA v2 val2014,,,,hard: reasoning-sensitive example; official VQA v2 val2014; answer_type=other; consensus=10/10
+6,data/sample_images/COCO_val2014_000000240301.jpg,Is it daylight in this picture?,yes_no,yes,VQA v2 val2014,,,,official VQA v2 val2014; answer_type=yes/no; consensus=10/10
+7,data/sample_images/COCO_val2014_000000131089.jpg,How many are playing ball?,counting,1,VQA v2 val2014,,,,hard: reasoning-sensitive example; official VQA v2 val2014; answer_type=number; consensus=9/10
+8,data/sample_images/COCO_val2014_000000131089.jpg,Is there a chain link fence in the image?,yes_no,no,VQA v2 val2014,,,,official VQA v2 val2014; answer_type=yes/no; consensus=10/10
+9,data/sample_images/COCO_val2014_000000131089.jpg,Is the boy playing baseball?,yes_no,yes,VQA v2 val2014,,,,official VQA v2 val2014; answer_type=yes/no; consensus=10/10
+10,data/sample_images/COCO_val2014_000000262162.jpg,How many beds?,counting,1,VQA v2 val2014,,,,hard: reasoning-sensitive example; official VQA v2 val2014; answer_type=number; consensus=9/10
+11,data/sample_images/COCO_val2014_000000262162.jpg,How many pictures are there?,counting,7,VQA v2 val2014,,,,hard: reasoning-sensitive example; official VQA v2 val2014; answer_type=number; consensus=10/10
+12,data/sample_images/COCO_val2014_000000262162.jpg,How many sources of light are there?,counting,1,VQA v2 val2014,,,,hard: reasoning-sensitive example; official VQA v2 val2014; answer_type=number; consensus=8/10
+13,data/sample_images/COCO_val2014_000000000042.jpg,What color are the gym shoes?,color,white,VQA v2 val2014,,,,official VQA v2 val2014; answer_type=other; consensus=9/10
+14,data/sample_images/COCO_val2014_000000000042.jpg,What color is the flip flop?,color,red,VQA v2 val2014,,,,official VQA v2 val2014; answer_type=other; consensus=8/10
+15,data/sample_images/COCO_val2014_000000131115.jpg,How many people are on the field?,counting,3,VQA v2 val2014,,,,hard: reasoning-sensitive example; official VQA v2 val2014; answer_type=number; consensus=10/10
+16,data/sample_images/COCO_val2014_000000393266.jpg,What color is the plant?,color,green,VQA v2 val2014,,,,official VQA v2 val2014; answer_type=other; consensus=8/10
+17,data/sample_images/COCO_val2014_000000393267.jpg,What color is the woman's shirt on the left?,color,black,VQA v2 val2014,,,,official VQA v2 val2014; answer_type=other; consensus=9/10
+18,data/sample_images/COCO_val2014_000000393267.jpg,What type of beverage is being displayed?,object,wine,VQA v2 val2014,,,,official VQA v2 val2014; answer_type=other; consensus=10/10
+19,data/sample_images/COCO_val2014_000000262197.jpg,What is the color of the building in the background?,color,brown,VQA v2 val2014,,,,official VQA v2 val2014; answer_type=other; consensus=9/10
+20,data/sample_images/COCO_val2014_000000262200.jpg,What is being celebrated?,object,birthday,VQA v2 val2014,,,,official VQA v2 val2014; answer_type=other; consensus=10/10
+21,data/sample_images/COCO_val2014_000000393274.jpg,What is this vehicle?,object,train,VQA v2 val2014,,,,official VQA v2 val2014; answer_type=other; consensus=8/10
+22,data/sample_images/COCO_val2014_000000393277.jpg,What is in the tower?,object,clock,VQA v2 val2014,,,,official VQA v2 val2014; answer_type=other; consensus=10/10
+23,data/sample_images/COCO_val2014_000000393284.jpg,What is the this person doing?,action,snowboarding,VQA v2 val2014,,,,hard: reasoning-sensitive example; official VQA v2 val2014; answer_type=other; consensus=10/10
+24,data/sample_images/COCO_val2014_000000393284.jpg,What sport is the man doing?,action,snowboarding,VQA v2 val2014,,,,hard: reasoning-sensitive example; official VQA v2 val2014; answer_type=other; consensus=10/10
+25,data/sample_images/COCO_val2014_000000393284.jpg,What is the man doing?,action,snowboarding,VQA v2 val2014,,,,hard: reasoning-sensitive example; official VQA v2 val2014; answer_type=other; consensus=8/10
+26,data/sample_images/COCO_val2014_000000393288.jpg,What kind of building is this?,object,church,VQA v2 val2014,,,,official VQA v2 val2014; answer_type=other; consensus=9/10
+27,data/sample_images/COCO_val2014_000000262229.jpg,What are on the girls heads?,spatial_scene,headbands,VQA v2 val2014,,,,hard: reasoning-sensitive example; official VQA v2 val2014; answer_type=other; consensus=8/10
+28,data/sample_images/COCO_val2014_000000262161.jpg,What is that white thing behind the motorcyclist?,spatial_scene,car,VQA v2 val2014,,,,hard: reasoning-sensitive example; official VQA v2 val2014; answer_type=other; consensus=9/10
+29,data/sample_images/COCO_val2014_000000524621.jpg,What are these animals doing?,action,standing,VQA v2 val2014,,,,hard: reasoning-sensitive example; official VQA v2 val2014; answer_type=other; consensus=8/10
+30,data/sample_images/COCO_val2014_000000262531.jpg,What is the man in the hat doing?,action,skateboarding,VQA v2 val2014,,,,hard: reasoning-sensitive example; official VQA v2 val2014; answer_type=other; consensus=10/10

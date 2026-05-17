@@ -12,17 +12,24 @@
 
 ### Phase 1: Dataset, Taxonomy, and Preprocessing
 
-- [ ] Collect approved real-world images for `data/sample_images/`.
-- [ ] Create at least 30 image-question-answer rows in `data/vqa_test_set.csv`.
-- [ ] Target 30 to 50 total rows for a stronger submission.
-- [ ] Include at least 5 examples per question type.
-- [ ] Cover these question types: `counting`, `yes_no`, `color`, `object`, `action`, `spatial_scene`.
-- [ ] Add at least 5 hard examples: clutter, occlusion, ambiguous color, multiple objects, background confusion.
-- [ ] Verify every image path in the CSV exists.
-- [ ] Review ground-truth answers for short, consistent wording.
-- [ ] Implement or refine image validation in `src/preprocessing.py`.
-- [ ] Implement or refine question taxonomy rules in `src/question_types.py`.
-- [ ] Add notes for any weak or ambiguous examples.
+- [x] Select official dataset source: VQA v2 + MS COCO 2014 train/validation images.
+- [x] Add minimal downloader for VQA v2 validation metadata and selected COCO images.
+- [x] Download VQA v2 validation questions and annotations into `data/raw/vqa/`.
+- [x] Download only selected COCO val2014 images into `data/sample_images/`.
+- [x] Build project subset with `python scripts/download_vqa_minimal.py`.
+- [x] Create at least 30 image-question-answer rows in `data/vqa_test_set.csv`.
+- [x] Keep the official subset small enough for a reliable demo and evaluation run.
+- [x] Include at least 5 examples per question type.
+- [x] Cover these question types: `counting`, `yes_no`, `color`, `object`, `action`, `spatial_scene`.
+- [x] Add at least 5 hard examples: clutter, occlusion, ambiguous color, multiple objects, background confusion.
+- [x] Verify every image path in the CSV exists.
+- [x] Review ground-truth answers for short, consistent wording.
+- [x] Implement or refine image validation in `src/preprocessing.py`.
+- [x] Implement or refine question taxonomy rules in `src/question_types.py`.
+- [x] Add notes for any weak or ambiguous examples.
+- [x] Document image/data sources in `data/IMAGE_SOURCES.md`.
+- [x] Document taxonomy and answer rules in `data/QUESTION_TAXONOMY.md`.
+- [x] Complete Member 01 to Member 02 handoff.
 
 ### Member 01 Support in Later Phases
 
@@ -46,11 +53,11 @@
 
 ### Dataset
 
-- [ ] At least 30 image-question-answer pairs are present.
-- [ ] At least 5 question types are represented.
-- [ ] Every image path is valid.
-- [ ] Ground-truth answers are reviewed by the team.
-- [ ] Test set contains easy and challenging examples.
+- [x] At least 30 image-question-answer pairs are present.
+- [x] At least 5 question types are represented.
+- [x] Every image path is valid.
+- [x] Ground-truth answers are reviewed for short consistent wording.
+- [x] Test set contains easy and challenging examples.
 
 ### Evaluation
 

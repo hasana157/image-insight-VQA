@@ -249,15 +249,15 @@ CUSTOM_CSS = """
 # ── Model initialization ─────────────────────────────────────────────────────
 
 print("=" * 60)
-print("  IMAGE INSIGHT: VQA  —  Starting up ...")
+print("  IMAGE INSIGHT: VQA  -  Starting up ...")
 print("=" * 60)
 
 try:
     load_model()
-    MODEL_STATUS = "✅ Model loaded successfully"
+    MODEL_STATUS = "Model loaded successfully"
     print(f"\n{MODEL_STATUS}")
 except Exception as e:
-    MODEL_STATUS = f"❌ Model failed to load: {e}"
+    MODEL_STATUS = f"Model failed to load: {e}"
     print(f"\n{MODEL_STATUS}")
     traceback.print_exc()
 
@@ -515,7 +515,7 @@ natural-language questions about images using state-of-the-art transformer model
 
 example_entries = load_example_entries()
 
-with gr.Blocks(css=CUSTOM_CSS, theme=gr.themes.Soft(), title="IMAGE INSIGHT: VQA") as demo:
+with gr.Blocks(title="IMAGE INSIGHT: VQA") as demo:
 
     # ── Header ──
     gr.HTML("""
@@ -609,11 +609,11 @@ with gr.Blocks(css=CUSTOM_CSS, theme=gr.themes.Soft(), title="IMAGE INSIGHT: VQA
                 qtype_chart = os.path.join("results", "question_type_accuracy.png")
                 inftime_chart = os.path.join("results", "inference_time_chart.png")
                 if os.path.isfile(qtype_chart):
-                    gr.Image(value=qtype_chart, label="Question Type Accuracy", show_download_button=False)
+                    gr.Image(value=qtype_chart, label="Question Type Accuracy", buttons=[])
                 else:
                     gr.Markdown("*Question type accuracy chart not found.*")
                 if os.path.isfile(inftime_chart):
-                    gr.Image(value=inftime_chart, label="Inference Time by Type", show_download_button=False)
+                    gr.Image(value=inftime_chart, label="Inference Time by Type", buttons=[])
                 else:
                     gr.Markdown("*Inference time chart not found.*")
 
@@ -647,4 +647,6 @@ if __name__ == "__main__":
         server_port=7860,
         share=False,
         show_error=True,
+        theme=gr.themes.Soft(),
+        css=CUSTOM_CSS,
     )
